@@ -1,0 +1,78 @@
+MLProject/
+├── .gitignore
+│   <- Specifies files/folders Git should ignore (e.g., virtual environments, cache files, data folders)
+├── LICENSE
+│   <- Open-source license defining permissions (MIT recommended)
+├── Makefile
+│   <- CLI commands for automation like `make data`, `make train`, `make lint`, or `make test`
+├── README.md
+│   <- High-level project overview, installation instructions, usage examples, and contribution guide
+├── requirements.txt
+│   <- List of required Python packages with exact versions (`pip freeze > requirements.txt`)
+├── setup.py
+│   <- Setup script for packaging and installing the project (`pip install -e .`)
+├── pyproject.toml
+│   <- Modern project and build configuration (supports poetry, black, etc.)
+├── tox.ini
+│   <- Configuration for `tox`, a tool for automated testing in multiple Python environments
+│
+├── config/
+│   └── config.yaml
+│       <- Centralized configuration: paths, hyperparameters, training settings
+│
+├── data/
+│   ├── raw/            <- Original, untouched data as received
+│   ├── external/       <- Data from third-party APIs, web scraping, datasets
+│   ├── interim/        <- Data that’s been cleaned or partially transformed
+│   └── processed/      <- Final dataset used directly for training ML models
+│
+├── docs/
+│   ├── conf.py         <- Sphinx configuration
+│   ├── index.rst       <- Main entry point for documentation
+│   └── _build/         <- Auto-generated HTML/PDF files from Sphinx or MkDocs
+│
+├── models/
+│   ├── checkpoints/    <- Periodic model weights saved during training
+│   └── best_model.pkl  <- Serialized best model (Pickle, Joblib, etc.)
+│
+├── notebooks/
+│   ├── 1.0-eda.ipynb               <- Exploratory Data Analysis
+│   └── 2.0-baseline-model.ipynb    <- Initial model experiment and benchmark
+│
+├── references/
+│   <- Research papers, dataset descriptions, label schemas, external citations
+│
+├── reports/
+│   ├── figures/        <- Charts, plots, diagrams used in final reports or papers
+│   └── report.html     <- Final compiled report (could also be PDF, Markdown, etc.)
+│
+├── scripts/
+│   └── run_all.sh      <- Bash script to automate end-to-end pipeline execution
+│
+├── src/
+│   ├── __init__.py     <- Declares `src` as a package
+│   ├── config.py       <- Handles config file reading, validation, and exposure
+│   ├── data/
+│   │   ├── __init__.py
+│   │   └── make_dataset.py        <- Code to fetch, clean, and organize raw data
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── build_features.py      <- Extract and engineer model input features
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── train_model.py         <- Model training script
+│   │   └── predict_model.py       <- Model inference/prediction script
+│   ├── pipelines/
+│   │   └── pipeline.py            <- Full pipeline combining data, training, prediction
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── helpers.py             <- Helper functions (logging, file I/O, metrics)
+│   └── visualization/
+│       ├── __init__.py
+│       └── visualize.py           <- Plotting functions (confusion matrix, feature importance, etc.)
+│
+└── tests/
+    ├── __init__.py
+    ├── test_data.py               <- Unit tests for data loading/processing
+    ├── test_models.py             <- Unit tests for training/prediction logic
+    └── test_features.py           <- Unit tests for feature engineering steps
